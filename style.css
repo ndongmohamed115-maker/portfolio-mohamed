@@ -61,9 +61,9 @@ text-decoration: underline;
 /* Sections */
 
 section {
-max-width: 1100px;
-margin: auto;
-padding: 90px 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 45px 20px;
 }
 
 section h2 {
@@ -74,8 +74,7 @@ margin-bottom: 25px;
 /* Accueil */
 
 #accueil {
-min-height: 85vh;
-
+    min-height: 70vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -110,18 +109,43 @@ border-radius: 5px;
 
 /* Compétences */
 
+
+/* Grille des compétences */
 #competences ul {
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    list-style: none;
 }
 
+/* Cartes des compétences */
 #competences li {
-background: white;
-border: 1px solid #ddd;
-padding: 10px 16px;
-border-radius: 5px;
+    background: #ffffff;
+    color: #2b3d91;
+    border: 1px solid #dce1f0;
+    padding: 16px 12px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Effet au survol */
+#competences li:hover {
+    transform: translateY(-4px);
+    background: #eef1ff;
+}
+
+/* Compétences en mode sombre */
+body.dark-mode #competences li {
+    background: #2b2b2b;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+body.dark-mode #competences li:hover {
+    background: #383838;
 }
 
 /* Projets */
@@ -295,4 +319,45 @@ body.dark-mode footer {
     section {
         padding: 30px 15px;
     }
+}
+
+/* Compétences en mode sombre */
+body.dark-mode #competences li {
+    background-color: #2b2b2b;
+    color: #f1f1f1;
+    border-color: #555;
+}
+
+/* Cartes des projets en mode sombre */
+body.dark-mode .projet-card {
+    background-color: #252525;
+    color: #f1f1f1;
+    border-color: #444;
+}
+
+body.dark-mode .projet-card h3 {
+    color: #a9baff;
+}
+
+body.dark-mode .technologies {
+    color: #f1f1f1;
+}
+
+body.dark-mode .projet-statut {
+    background-color: #383838;
+    color: #f1f1f1;
+}
+
+body.dark-mode .projets-intro {
+    color: #ddd;
+}
+
+/* Photo et bouton */
+body.dark-mode .hero-photo img {
+    border-color: #a9baff;
+}
+
+body.dark-mode #accueil a {
+    background-color: #8da2ff;
+    color: #121212;
 }
